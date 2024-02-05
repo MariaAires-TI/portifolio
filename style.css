@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* o tamanho da caixa é medido através da borda, com isso o padding não altera o tamanho da caixa */
+}
+
+:root {
+    --text-color:white;
+    --bg-url: url(./bg-mobile.jpg) ;
+    --border-color: rgba(255, 255, 255, 0.5);
+    --bg-button-color: rgba(255, 255, 255, 0.10);
+    --switch-bg-url: url(./MoonStars.svg)
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./bg-mobile-light.jpg) ;
+     /* stroke-color */
+    --border-color: rgba(0, 0, 0, 0.5);    
+     /* surface-color */
+    --bg-button-color: rgba(0, 0, 0, 0.05);
+    --switch-bg-url: url(./Sun.svg)
+
+
+}
+
+
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+body {   
+    /* background-image: url(./bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;    
+    background-size: cover; */
+
+    /* background: img, repeat, position, size */
+    background: var(--bg-url)  no-repeat top center/cover;
+}
+
+
+
+#container {
+    width: 360px;
+    height: 712px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+/* profile */
+#profile {
+    text-align: center;
+}
+
+#profile img {
+    width: 112px; 
+    /* padding: 24px;    */
+}
+
+#profile p {
+    /* font-size: 16px;por padrão já é 16px, não precisa colocar */
+    font-weight: 500;
+    line-height: 24px;
+    /* negrito */
+    margin-top: 8px;
+}
+
+/* switch */
+
+#switch {
+    position: relative;
+    /* O relative se torna um limitado de espaço */
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    /* o absolute sobrepoe os elementos */
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--bg-button-color);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;     
+}
+
+
+
+/* links */
+
+ul {
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--bg-button-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+
+    /* ele aplica essas configurações no ul li a para ajustar o texto dentro da caixa */
+}
+
+/* pseuso-seletor */
+ul li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid var(--text-color);
+}
+
+/* social-links */
+
+#social-links {    
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+}
+
+#social-links a { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%; /* faz uma bola perfeita */     
+    
+
+}
+
+#social-links a:hover {    
+    background: rgba(255, 255, 255, 0.2);
+    padding: 16px ;
+}
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
